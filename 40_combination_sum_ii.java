@@ -23,10 +23,12 @@ class Solution {
                 break;
             }
             
+            // make unique combination
             if (i != start && candidates[i] == candidates[i - 1]) {
                 continue;
             }
             curr.add(candidates[i]);
+            // i + 1 makes every number to be used only once
             helper(candidates, i + 1, target - candidates[i], curr);
             curr.remove(curr.size() - 1);
         }
