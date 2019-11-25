@@ -13,7 +13,7 @@ class LongestSubstringKDistinct {
       } else {
         distinct++;
         counter.put(str.charAt(windowEnd), 1);
-        if (distinct > k) {
+        while (distinct > k) {
           counter.put(str.charAt(windowStart), counter.get(str.charAt(windowStart)) - 1);
           if (counter.get(str.charAt(windowStart)) == 0) {
             counter.remove(str.charAt(windowStart));
